@@ -1,0 +1,27 @@
+
+        tipo = 1: Matriz generica qualquer
+        
+        tipo = 2: Matriz identidade: A matriz identidade é formada apenas apenas pelos valores zero e um.
+        Os 1's estarão na diagonal principal e os zeros nas demais célula.
+        
+        tipo = 3: Matriz triangular superior: É uma matriz quadrada tal que os elementos que estão abaixo da diagonal principal 
+        são todos nulos.
+        
+        tipo = 4: Matriz triangular inferior: É uma matriz quadrada tal que os elementos que estão acima da diagonal principal 
+        são todos nulos.
+
+        Retorna o valor da célula de indice linha i e coluna j.
+        Esse método deve sempre ser usado quando for acessar um valor de uma célula da matriz.
+        double get(int i, int j);
+
+        Realiza a operação de soma de duas matrizes quadradas de mesma ordem.
+        Gera e retorna uma nova matriz com o resultado da soma das matrizes.
+        MatrizQuadrada soma(MatrizQuadrada& B);
+
+        Realiza a operação de multiplicacao de duas matrizes quadradas de mesma ordem.
+        Gera e retorna uma nova matriz com o resultado da multiplicacao das matrizes.
+        MatrizQuadrada multiplicacao(MatrizQuadrada& B);
+            
+        Aplica a operação de multiplicacao por um escalar na matriz do objeto.
+        A operação por um escala multiplicada cada elemento da matriz pelo número.
+        void multiplicacaoPorEscalar(double alpha);
