@@ -3,11 +3,13 @@
 #define MATRIZ_TRIANGULAR_SUPERIOR 3
 #define MATRIZ_TRIANGULAR_INFERIOR 4
 
-class MatrizQuadrada{
+template <typename T> 
+class MatrizQuadrada {
     private:
         int tipo;
         int n;
-        double* vetor;
+        T *vetor;
+
     public:
         MatrizQuadrada(int ordem);
         MatrizQuadrada(int ordem, int tipo);
@@ -15,20 +17,11 @@ class MatrizQuadrada{
 
         int getOrdem();
         int getTipo();
-        double get(int i, int j);
-        void set(int i, int j, double value);
+        T get(int i, int j) const;
+        void set(int i, int j, T value);
 
-        MatrizQuadrada soma(MatrizQuadrada& B);
-        MatrizQuadrada multiplicacao(MatrizQuadrada& B);
-        
-        void multiplicacaoPorEscalar(double alpha);
+        MatrizQuadrada<T> soma(const MatrizQuadrada<T> &B);
+        MatrizQuadrada<T> multiplicacao(const MatrizQuadrada<T> &B);
+
+        void multiplicacaoPorEscalar(T alpha);
 };
-
-
-
-
-
-
-
-
-
