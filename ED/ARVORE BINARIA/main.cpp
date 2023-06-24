@@ -45,7 +45,7 @@ template <typename T> void bt_ordem_simetrica(BinaryTree<T> &bt) {
 }
 
 template <typename T> void bt_percurso_largura(BinaryTree<T> &bt) {
-  Node<T> *node = bt.getnode();
+  Node<T> *node = bt.getRoot();
   if (node == nullptr)
     return;
 
