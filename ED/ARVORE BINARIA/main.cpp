@@ -44,33 +44,26 @@ template <typename T> void bt_ordem_simetrica(BinaryTree<T> &bt) {
   bt_ordem_simetrica_aux(root);
 }
 
-template <typename T> void bt_percurso_largura_aux(queue<Node<T> *> &q) {
-  if (q.empty())
-    return;
-
-  Node<T> *current = q.front();
-  q.pop();
-
-  cout << current->getValue() << " ";
-
-  if (current->getLeft() != nullptr)
-    q.push(current->getLeft());
-
-  if (current->getRight() != nullptr)
-    q.push(current->getRight());
-
-  bt_percurso_largura_aux(q);
-}
-
 template <typename T> void bt_percurso_largura(BinaryTree<T> &bt) {
-  Node<T> *root = bt.getRoot();
-  if (root == nullptr)
+  Node<T> *node = bt.getnode();
+  if (node == nullptr)
     return;
 
   queue<Node<T> *> q;
-  q.push(root);
+  q.push(node);
 
-  bt_percurso_largura_aux(q);
+  while (!q.empty()) {
+    Node<T> *u = q.front();
+    q.pop();
+
+    cout << u->getValue() << " ";
+
+    if (u->getLeft() != nullptr)
+      q.push(u->getLeft());
+
+    if (u->getRight() != nullptr)
+      q.push(u->getRight());
+  }
 }
 
 template <typename T> void execute_all(BinaryTree<T> &bt) {
